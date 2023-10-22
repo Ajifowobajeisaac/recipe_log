@@ -6,6 +6,8 @@ from . import views
 
 app_name = 'recipe_log'
 urlpatterns = [
-    #Home page
+    # Home page
     path('', views.index, name='index'),
+    # Page that shows all the recipe names
+    path('recipe/', views.recipe_name, name='recipe'),
     ]
