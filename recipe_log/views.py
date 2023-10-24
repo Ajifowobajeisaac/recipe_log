@@ -11,5 +11,5 @@ def index(request):
 def recipe_names(request):
     """Show all recipe names"""
     recipe_names = Recipe_name.objects.order_by('date_added')
-    context ={'recipe names': recipe_names}
+    context = {'recipe_names': recipe_names}
     return render(request,'recipe_log/recipes.html', context)
