@@ -8,7 +8,7 @@ def index(request):
     """The home page for Recipe log. """
     return render(request, 'recipe_log/index.html')
 
-def recipe_names(request):
+def recipes(request):
     """Show all recipe names"""
     recipe_names = Recipe_name.objects.order_by('date_added')
     context = {'recipe_names': recipe_names}

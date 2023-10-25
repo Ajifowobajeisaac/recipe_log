@@ -9,5 +9,5 @@ urlpatterns = [
     # Home page
     path('', views.index, name='index'),
     # Page that shows all the recipe names
-    path('recipe/', views.recipe_names, name='recipe'),
+    path('recipes/', views.recipes, name='recipes'),
     ]
