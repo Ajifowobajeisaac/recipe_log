@@ -10,4 +10,6 @@ urlpatterns = [
     path('', views.index, name='index'),
     # Page that shows all the recipe names
     path('recipes/', views.recipes, name='recipes'),
+    # Page that shows an individual recipe
+    path('recipes/<int:recipe_id>/', views.recipe, name='recipe')
     ]
