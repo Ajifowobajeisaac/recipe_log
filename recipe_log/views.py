@@ -17,6 +17,6 @@ def recipes(request):
 def recipe(request, recipe_id):
     """Displays individual recipes"""
     recipe = Recipe_name.objects.get(id=recipe_id)
-    entry = recipe.entry_set()
+    entry = recipe.entry_set.order_by('date_added')
     context = {'recipe': recipe, 'entry': entry}
-    return render(request, 'recipe_log/recipes/recipe.html', context)
+    return render(request, 'recipe_log/recipe.html', context)

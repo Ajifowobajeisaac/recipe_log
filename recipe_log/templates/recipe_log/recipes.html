@@ -6,7 +6,8 @@
   <ul>
     {% for recipe in recipe_names %}
       <li>
-          {{ recipe.text }}</li>
+        <a href="{% url 'recipe_log:recipe' recipe.id %}">
+          {{ recipe.text }}</a></li>
     {% endfor %}
   </ul>
 {% endblock content %}

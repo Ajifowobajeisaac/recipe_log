@@ -1,10 +1,10 @@
 {% extends 'recipe_log/base.html' %}
 
-{% blcok content %}
+{% block content %}
 
   <p>Recipe: {{ recipe.text }}</p>
 
   <p>Entry: </p>
-    <p> {{ entry.text }}</p>
+    <p> {{ entry }}</p>
 
-{% endlblock content %}
+{% endblock content %}
