@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-from .models import Recipe_name, Entry
+from .models import Recipe_name
+from .forms import RecipeForm
+from .forms import EntryForm
 
 # Create your views here.
 
@@ -20,3 +22,36 @@ def recipe(request, recipe_id):
     entry = recipe.entry_set.order_by('date_added')
     context = {'recipe': recipe, 'entry': entry}
     return render(request, 'recipe_log/recipe.html', context)
+
+def new_recipe(request):
+    """Add a new recipe"""
+    if request.method != 'POST':
+        # No data submitted; create a blank form.
+        form = RecipeForm()
+    else:
+        # Post data submitted; process data.
+        form = RecipeForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('recipe_log:recipes')
+        
+    # Display a blank or invalid form.
+    context = {'form': form}
+    return render(request, 'recipe_log/new_recipe.html', context)
+
+def new_entry(request, recipe_id):
+    """Adds a new entry"""
+    recipe = Recipe_name.objects.get(id=recipe_id)
+    
+    if request.method != 'POST':
+        # No data submitted; create a blank form.
+        form = EntryForm()
+    else:
+        # Post data submitted; process data.
+        form = EntryForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('recipe_log:recipe', recipe_id=recipe_id)
+        
+    # Display a blank or invalid form.
+    context = {'recipe' : recipe,'form' : form}

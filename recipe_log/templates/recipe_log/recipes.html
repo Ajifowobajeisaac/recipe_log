@@ -10,4 +10,5 @@
           {{ recipe.text }}</a></li>
     {% endfor %}
   </ul>
+  <a href="{% url 'recipe_log:new_recipe' %}">Add a new recipe</a>
 {% endblock content %}
