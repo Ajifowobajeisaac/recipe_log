@@ -5,6 +5,9 @@
   <p>Recipe: {{ recipe.text }}</p>
 
   <p>Entry: </p>
+    <p>
+      <a href="{% url 'recipe_log:new_entry' recipe.id %}">Add new recipe</a>
+    </p>
     <p> {{ entry }}</p>
 
 {% endblock content %}

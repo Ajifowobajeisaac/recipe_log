@@ -1,12 +1,12 @@
 {% extends 'recipe_log/base.html' %}
 
 {% block content %}
-  <p>Add a new recipe:</p>
+  <p>Add a new recipe name:</p>
 
   <form action="{% url 'recipe_log:new_recipe' %}" method="post">
     {% csrf_token %}
     {{ form.as_div }}
-    <button name="submit">Add recipe</button>
+    <button name="submit">Add recipe name</button>
   </form>
 
 {% endblock content %}

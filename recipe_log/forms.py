@@ -8,9 +8,9 @@ class RecipeForm(forms.ModelForm):
         fields = ['text']
         labels = {'text':''}
 
-class EntryForm(forms.Modelform):
+class EntryForm(forms.ModelForm):
     class Meta:
         model = Entry
         fields = ['text']
         labels = {'text':''}
-        widgets = {'text': forms.Textarea(attrs={'cols:80'})}
+        widgets = {'text': forms.Textarea(attrs={'cols':80})}
