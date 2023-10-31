@@ -8,6 +8,8 @@
     <p>
       <a href="{% url 'recipe_log:new_entry' recipe.id %}">Add new recipe</a>
     </p>
-    <p> {{ entry }}</p>
+    <p> {{ entry.text | linebreaks }}</p>
+
+    <p><a href="{% url 'recipe_log:edit_entry' recipe.id %}">Edit entry</a></p>
 
 {% endblock content %}

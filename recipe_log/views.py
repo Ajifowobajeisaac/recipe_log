@@ -58,9 +58,9 @@ def new_entry(request, recipe_id):
     context = {'recipe' : recipe,'form' : form}
     return render(request, 'recipe_log/new_entry.html', context)
 
-def edit_entry(request, entry_id):
+def edit_entry(request, recipe_id):
     """Edits a recipe entry"""
-    entry = Entry.objects.get(id=entry_id)
+    entry = Entry.objects.get(id=recipe_id)
     recipe = entry.recipe
 
     if request.method != 'POST':
@@ -69,7 +69,7 @@ def edit_entry(request, entry_id):
         form = EntryForm(instance=entry, data=request.POST)
         if form.is_valid:
             form.save()
-            return redirect('recipe_log:recipe', entry_id=entry_id)
+            return redirect('recipe_log:recipe', recipe_id=recipe.id)
         
     context = {'entry': entry, 'recipe': recipe, 'form': form}
-    return render(request, 'recipe_log:edit_entry.html', context)
+    return render(request, 'recipe_log/edit_entry.html', context)
