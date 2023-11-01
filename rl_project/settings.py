@@ -27,12 +27,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# My settings
+LOGIN_REDIRECT_URL = 'recipe_log:index'
+
 
 # Application definition
 
 INSTALLED_APPS = [
     # My apps
     'recipe_log',
+    'accounts',
     # Django default apps
     'django.contrib.admin',
     'django.contrib.auth',

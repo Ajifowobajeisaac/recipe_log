@@ -7,7 +7,7 @@
 
   <p> Edit entry:</p>
 
-  <form action="{% url 'recipe_log:edit_entry' recipe.id %}" method="post">
+  <form action="{% url 'recipe_log:edit_entry' entry.id %}" method="post">
         {% csrf_token %}
         {{ form.as_div }}
         <button name="submit">save changes</button>

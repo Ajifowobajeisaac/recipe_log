@@ -58,9 +58,9 @@ def new_entry(request, recipe_id):
     context = {'recipe' : recipe,'form' : form}
     return render(request, 'recipe_log/new_entry.html', context)
 
-def edit_entry(request, recipe_id):
+def edit_entry(request, entry_id):
     """Edits a recipe entry"""
-    entry = Entry.objects.get(id=recipe_id)
+    entry = Entry.objects.get(id=entry_id)
     recipe = entry.recipe
 
     if request.method != 'POST':
