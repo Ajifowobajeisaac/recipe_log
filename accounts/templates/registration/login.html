@@ -13,11 +13,3 @@
     <button name="submit">Log in</button>
   </form>
 {% endblock content %}
-
-{% if user.is_authenticated %}
-  <hr />
-  <form action="{% url 'accounts:logout' %}" method="post">
-    {% csrf_token %}
-    <button name="submit">Log out</button>
-  </form>
-{% endif %}

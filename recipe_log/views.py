@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 
 from .models import Recipe_name, Entry
 from .forms import RecipeForm, EntryForm
@@ -9,6 +10,7 @@ def index(request):
     """The home page for Recipe log. """
     return render(request, 'recipe_log/index.html')
 
+@login_required
 def recipes(request):
     """Show all recipe names"""
     recipe_names = Recipe_name.objects.order_by('date_added')
