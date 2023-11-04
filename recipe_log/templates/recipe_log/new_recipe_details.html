@@ -4,7 +4,7 @@
 
   <p><a href="{url 'recipe_log:recipe' recipe.id}">{{ recipe }}</a></p>
 
-  <p>Add a new recipe:</p>
+  <p>Add recipe details:</p>
 
   <form action="{% url 'recipe_log:new_entry' recipe.id %}" method="post">
     {% csrf_token %}

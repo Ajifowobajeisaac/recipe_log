@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.http import Http404
 
-from .models import Recipe_name, Entry
-from .forms import RecipeForm, EntryForm
+from .models import Recipe, RecipeDetails
+from .forms import RecipeForm, RecipeDetailsForm
 
 # Create your views here.
 
@@ -13,17 +14,22 @@ def index(request):
 @login_required
 def recipes(request):
     """Show all recipe names"""
-    recipe_names = Recipe_name.objects.order_by('date_added')
-    context = {'recipe_names': recipe_names}
+    recipes = Recipe.objects.filter(owner=request.user).order_by('date_added')
+    context = {'recipes': recipes}
     return render(request,'recipe_log/recipes.html', context)
 
+@login_required
 def recipe(request, recipe_id):
     """Displays individual recipes"""
-    recipe = Recipe_name.objects.get(id=recipe_id)
-    entry = recipe.entry_set.order_by('date_added')
-    context = {'recipe': recipe, 'entry': entry}
+    recipe = Recipe.objects.get(id=recipe_id)
+    # Ensures the recipe belong to the current user.
+    if recipe.owner != request.user:
+        raise Http404    
+    recipe_details = recipe.recipe_details.order_by('date_added')
+    context = {'recipe': recipe, 'recipe_details': recipe_details}
     return render(request, 'recipe_log/recipe.html', context)
 
+@login_required
 def new_recipe(request):
     """Add a new recipe"""
     if request.method != 'POST':
@@ -33,45 +39,52 @@ def new_recipe(request):
         # Post data submitted; process data.
         form = RecipeForm(data=request.POST)
         if form.is_valid():
-            form.save()
+            new_recipe_name = form.save(commit=False)
+            new_recipe_name.owner = request.user
+            new_recipe_name.save()
             return redirect('recipe_log:recipes')
         
     # Display a blank or invalid form.
     context = {'form': form}
     return render(request, 'recipe_log/new_recipe.html', context)
 
-def new_entry(request, recipe_id):
-    """Adds a new entry"""
-    recipe = Recipe_name.objects.get(id=recipe_id)
+@login_required
+def new_recipe_details(request, recipe_id):
+    """Adds new recipe details"""
+    recipe = Recipe.objects.get(id=recipe_id)
     
     if request.method != 'POST':
         # No data submitted; create a blank form.
-        form = EntryForm()
+        form = RecipeDetailsForm()
     else:
         # Post data submitted; process data.
-        form = EntryForm(data=request.POST)
+        form = RecipeDetailsForm(data=request.POST)
         if form.is_valid():
-            new_entry = form.save(commit=False)
-            new_entry.recipe = recipe
+            new_recipe_details = form.save(commit=False)
+            new_recipe_details.recipe = recipe
             form.save()
             return redirect('recipe_log:recipe', recipe_id=recipe_id)
         
     # Display a blank or invalid form.
     context = {'recipe' : recipe,'form' : form}
-    return render(request, 'recipe_log/new_entry.html', context)
+    return render(request, 'recipe_log/new_recipe_details.html', context)
 
-def edit_entry(request, entry_id):
-    """Edits a recipe entry"""
-    entry = Entry.objects.get(id=entry_id)
-    recipe = entry.recipe
+@login_required
+def edit_recipe_details(request, recipe_details_id):
+    """Edits the recipe details"""
+    recipe_details = RecipeDetails.objects.get(id=recipe_details_id)
+    recipe = recipe_details.recipe
+    # Ensures the recipe belong to the current user.
+    if recipe.owner != request.user:
+        raise Http404    
 
     if request.method != 'POST':
-        form = EntryForm(instance=entry)
+        form = RecipeDetailsForm(instance=recipe_details)
     else:
-        form = EntryForm(instance=entry, data=request.POST)
+        form = RecipeDetailsForm(instance=recipe_details, data=request.POST)
         if form.is_valid:
             form.save()
             return redirect('recipe_log:recipe', recipe_id=recipe.id)
         
-    context = {'entry': entry, 'recipe': recipe, 'form': form}
-    return render(request, 'recipe_log/edit_entry.html', context)
+    context = {'recipe_details': recipe_details, 'recipe': recipe, 'form': form}
+    return render(request, 'recipe_log/edit_recipe_details.html', context)

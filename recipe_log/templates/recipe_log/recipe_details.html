@@ -5,7 +5,7 @@
   <p><a href="{% url 'recipe_log:recipe' recipe.id %}">{{ recipe }}</a></p>
 
 
-  <p> Edit entry:</p>
+  <p> Edit details:</p>
 
   <form action="{% url 'recipe_log:edit_entry' entry.id %}" method="post">
         {% csrf_token %}

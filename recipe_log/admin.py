@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Recipe_name, Entry
+from .models import Recipe, RecipeDetails
 
-admin.site.register(Recipe_name)
-admin.site.register(Entry)
+admin.site.register(Recipe)
+admin.site.register(RecipeDetails)

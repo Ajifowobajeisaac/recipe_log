@@ -15,8 +15,10 @@ urlpatterns = [
     # Page for adding new recipes.
     path('new_recipe/', views.new_recipe, name='new_recipe'),
     # Page for adding new entries.
-    path('new_entry/<int:recipe_id>/', views.new_entry, name='new_entry'),
+    path('new_recipe_details/<int:recipe_id>/', views.new_recipe_details, 
+         name='new_recipe_details'),
     # Page for editing entries.
-    path('edit_entry/<int:entry_id>/', views.edit_entry, name='edit_entry'),
-    ]
+    path('edit_recipe_details/<int:recipe_details_id>/', views.edit_recipe_details,
+          name='edit_recipe_details'),
+]
     

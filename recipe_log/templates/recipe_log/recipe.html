@@ -4,12 +4,12 @@
 
   <p>Recipe: {{ recipe.text }}</p>
 
-  <p>Entry: </p>
+  <p>Recipe details: </p>
     <p>
       <a href="{% url 'recipe_log:new_entry' recipe.id %}">Add new recipe</a>
     </p>
-    <p> {{ entry.text | linebreaks }}</p>
-
+    <p> {{ recipe_details.text | linebreaks }}</p>
+    
     <p><a href="{% url 'recipe_log:edit_entry' recipe.id %}">Edit entry</a></p>
 
 {% endblock content %}

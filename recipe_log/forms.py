@@ -1,16 +1,16 @@
 from django import forms
 
-from .models import Recipe_name, Entry
+from .models import Recipe, RecipeDetails
 
 class RecipeForm(forms.ModelForm):
     class Meta:
-        model = Recipe_name
+        model = Recipe
         fields = ['text']
         labels = {'text':''}
 
-class EntryForm(forms.ModelForm):
+class RecipeDetailsForm(forms.ModelForm):
     class Meta:
-        model = Entry
+        model = RecipeDetails
         fields = ['text']
         labels = {'text':''}
         widgets = {'text': forms.Textarea(attrs={'cols':80})}

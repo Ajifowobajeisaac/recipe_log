@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 # My settings
 LOGIN_REDIRECT_URL = 'recipe_log:index'
 LOGOUT_REDIRECT_URL = 'recipe_log:index'
+LOGIN_URL = 'accounts:login'
 
 
 
