@@ -25,7 +25,7 @@ def recipe(request, recipe_id):
     # Ensures the recipe belong to the current user.
     if recipe.owner != request.user:
         raise Http404    
-    recipe_details = recipe.recipe_details.order_by('date_added')
+    recipe_details = recipe.recipedetails_set.order_by('date_added')
     context = {'recipe': recipe, 'recipe_details': recipe_details}
     return render(request, 'recipe_log/recipe.html', context)
 

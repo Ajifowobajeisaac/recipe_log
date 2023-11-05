@@ -6,7 +6,7 @@
 
   <p>Add recipe details:</p>
 
-  <form action="{% url 'recipe_log:new_entry' recipe.id %}" method="post">
+  <form action="{% url 'recipe_log:new_recipe_details' recipe.id %}" method="post">
     {% csrf_token %}
     {{ form.as_div }}
     <button name="submit">Add recipe</button>
