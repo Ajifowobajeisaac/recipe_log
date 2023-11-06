@@ -8,10 +8,8 @@
       <li>
         <a href="{% url 'recipe_log:recipe' recipe.id %}">
           {{ recipe.text }}</a></li>
-    {% endfor %}
-    {% for recipes in recipe_names %}
-      {% empty %}
-        <p>No recipes here, add some</p>
+          {% empty %}
+            <p>No recipes here, add some</p>
     {% endfor %}
   </ul>
   <a href="{% url 'recipe_log:new_recipe' %}">Add a new recipe</a>
