@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     # My apps
     'recipe_log',
     'accounts',
+
+    # Third party apps,
+    'django_bootstrap5',
+
     # Django default apps
     'django.contrib.admin',
     'django.contrib.auth',
