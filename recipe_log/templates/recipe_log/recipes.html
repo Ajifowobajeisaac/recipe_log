@@ -1,15 +1,19 @@
 {% extends 'recipe_log/base.html' %}
 
+
+{% block page_header %}
+  <h1>Recipes</h1>
+{% endblock page_header %}
+
 {% block content %}
 
-  <p>Recipes</p>
-  <ul>
+  <ul class="list-group border-bottom pb-2 mb-4">
     {% for recipe in recipes %}
-      <li>
+      <li class="list-group-item border-0">
         <a href="{% url 'recipe_log:recipe' recipe.id %}">
           {{ recipe.text }}</a></li>
-          {% empty %}
-            <p>No recipes here, add some</p>
+      {% empty %}
+        <li class="list-group-item border-0">No recipes here, add some.</li>
     {% endfor %}
   </ul>
   <a href="{% url 'recipe_log:new_recipe' %}">Add a new recipe</a>

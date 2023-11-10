@@ -1,15 +1,22 @@
 {% extends 'recipe_log/base.html' %}
 
+{% block page_header %}
+  <h1>{{recipe.text}}</h1>
+{% endblock page_header %}
+
 {% block content %}
 
-  <p>Recipe: {{ recipe.text }}</p>
-
-  <p>Recipe details: </p>
     <p>
       <a href="{% url 'recipe_log:new_recipe_details' recipe.id %}">Add new recipe</a>
     </p>
-    <p> {{ recipe_details }}</p>
-    
-    <p><a href="{% url 'recipe_log:edit_recipe_details' recipe.id %}">Edit entry</a></p>
+  {% for details in recipe_details %}
+    <div class="card mb-3">
+      <h4 class="card-header">
+        <small><a href="{recipe_log:edit_recipe_details' recipe.id %}">
+          Edit recipe</a></small>
+      </h4>
+      <div class="card-body">{{ details.text }}</div>
+    </div>  
+  {% endfor %}
 
 {% endblock content %}
