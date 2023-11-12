@@ -135,3 +135,30 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Platform.sh settings.
+
+from platformshconfig import Config
+
+config = Config()
+if config.is_valid_platform():
+    ALLOWED_HOSTS.append('.platformsh.site')
+
+    if config.appDir:
+        STATIC_ROOT = Path(config.appDir) / 'static'
+    if config.projectEntropy:
+        SECRET_KEY = config.projecEntropy
+
+    if not config.in_build():
+        db_settings = config.credentials('database')
+        DATABASES = {
+            'default' : {
+                'ENGINE' : 'django.db.backends.postgresql',
+                'NAME' : db_settings['path'],
+                'USER' : db_settings['username'],
+                'PASSWORD' : db_settings['password'],
+                'HOST' : db_settings['host'],
+                'PORT' : db_settings['port'],
+            },
+        }

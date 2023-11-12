@@ -1,0 +1,3 @@
+rl_project/
+__pycache__/
+*.sqlite3
