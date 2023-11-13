@@ -7,17 +7,17 @@ relationships:
 
 # The configuration of the app when it's exposed to the web.
 
-  upstream:
-    socket_family: unix
-  commands:
-    start: "gunicorn -w 4 -b unix:$SOCKET rl_project.wsgi:application"
-  locations:
-    "/":
-      passthru: true
-    "/static":
-      root: "static"
-      expires: 1h
-      allow: true
+upstream:
+  socket_family: unix
+commands:
+  start: "gunicorn -w 4 -b unix:$SOCKET rl_project.wsgi:application"
+locations:
+  "/":
+    passthru: true
+  "/static":
+    root: "static"
+    expires: 1h
+    allow: true
 
 # The size of the persistent disk of the application (in MB).
 disk: 512 
