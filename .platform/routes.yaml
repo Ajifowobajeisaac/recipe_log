@@ -1,9 +1,9 @@
 # Each route describes how an incoming URL will be processed by platform.sh
 
 "https://{default}/":
-	type: upstream
-	upstream: "rl_project:http"
+  type: upstream
+  upstream: "rl_project:http"
 
 "https://www.{default}/":
-	type: redirect
-	to: "https://{default}"/
+  type: redirect
+  to: "https://{default}"/
