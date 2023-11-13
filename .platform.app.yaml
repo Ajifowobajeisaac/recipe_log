@@ -41,3 +41,4 @@ hooks:
 
     deploy: |
         python manage migrate
+        gunicorn -w 4 -b unix:$SOCKET rl_project.wsgi:application --daemon
