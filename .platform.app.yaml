@@ -35,9 +35,8 @@ hooks:
         pip install -r requirements.txt
         pip install -r requirements_remote.txt
 
-        mkdir logs
+        mkdir -p logs
         python manage.py collectstatic
-        rm -r logs
 
     deploy: |
         python manage migrate
