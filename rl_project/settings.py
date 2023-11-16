@@ -148,7 +148,7 @@ if config.is_valid_platform():
     if config.appDir:
         STATIC_ROOT = Path(config.appDir) / 'static'
     if config.projectEntropy:
-        SECRET_KEY = config.projecEntropy
+        SECRET_KEY = config.projectEntropy
 
     if not config.in_build():
         db_settings = config.credentials('database')
