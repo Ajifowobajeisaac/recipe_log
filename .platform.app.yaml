@@ -24,19 +24,19 @@ disk: 512
 
 # Set a local read/write mount for logs.
 mounts:
-    "logs":
-        source: local
-        source_path: logs
+  "logs":
+    source: local
+    source_path: logs
 
 # The hooks exeuted at varius points in the lifecycle of the application.
 hooks:
-    build: |
-        pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install -r requirements_remote.txt
+  build: |
+    pip install --upgrade pip
+    pip install -r requirements.txt
+    pip install -r requirements_remote.txt
 
-        mkdir -p logs
-        python manage.py collectstatic
+    mkdir -p logs
+    python manage.py collectstatic
 
-    deploy: |
-        python manage migrate
+  deploy: |
+    python manage migrate
