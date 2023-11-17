@@ -12,7 +12,7 @@
   {% for details in recipe_details %}
     <div class="card mb-3">
       <h4 class="card-header">
-        <small><a href="{recipe_log:edit_recipe_details' recipe.id %}">
+        <small><a href="{% url 'recipe_log:edit_recipe_details' recipe.id %}">
           Edit recipe</a></small>
       </h4>
       <div class="card-body">{{ details.text }}</div>

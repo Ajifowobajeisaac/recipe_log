@@ -21,7 +21,10 @@ def recipes(request):
 @login_required
 def recipe(request, recipe_id):
     """Displays individual recipes"""
-    recipe = Recipe.objects.get(id=recipe_id)
+    try:
+        recipe = Recipe.objects.get(id=recipe_id)
+    except:
+        return redirect('recipe_log:new_recipe')
     # Ensures the recipe belong to the current user.
     if recipe.owner != request.user:
         raise Http404    
