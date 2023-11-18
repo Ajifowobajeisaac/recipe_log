@@ -24,7 +24,7 @@ def recipe(request, recipe_id):
     try:
         recipe = Recipe.objects.get(id=recipe_id)
     except Recipe.DoesNotExist:
-        return redirect('recipe_log:new_recipe')
+        raise Http404
     # Ensures the recipe belong to the current user.
     if recipe.owner != request.user:
         raise Http404    
