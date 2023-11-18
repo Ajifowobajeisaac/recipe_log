@@ -14,7 +14,8 @@ def index(request):
 @login_required
 def recipes(request):
     """Show all recipe names"""
-    recipes = Recipe.objects.filter(owner=request.user).order_by('date_added')
+    recipes = Recipe.objects.filter(owner=request.user).order_by('date_added') 
+
     context = {'recipes': recipes}
     return render(request,'recipe_log/recipes.html', context)
 
@@ -55,7 +56,8 @@ def new_recipe(request):
 def new_recipe_details(request, recipe_id):
     """Adds new recipe details"""
     recipe = Recipe.objects.get(id=recipe_id)
-    
+    if recipe.owner != request.user:
+        raise Http404     
     if request.method != 'POST':
         # No data submitted; create a blank form.
         form = RecipeDetailsForm()
