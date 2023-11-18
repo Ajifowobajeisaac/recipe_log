@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ci(f$ztof1!ojls@(*dvdk3f(na68=#xss_e*a8t4&wwysw_7v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
 
 # My settings
 LOGIN_REDIRECT_URL = 'recipe_log:index'
@@ -68,7 +68,7 @@ ROOT_URLCONF = 'rl_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR / 'template/recipe_log'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
