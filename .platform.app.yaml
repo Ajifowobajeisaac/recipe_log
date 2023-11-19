@@ -39,4 +39,4 @@ hooks:
     python manage.py collectstatic
 
   deploy: |
-    python manage migrate
+    python manage.py migrate
