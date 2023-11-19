@@ -27,12 +27,16 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
 
+
 # My settings
 LOGIN_REDIRECT_URL = 'recipe_log:index'
 LOGOUT_REDIRECT_URL = 'recipe_log:index'
 LOGIN_URL = 'accounts:login'
 
+# Directory for log files
+LOGS_DIR = BASE_DIR / 'logs'
 
+# LOGGING configuration
 LOGGING = {
     'version' : 1,
     'disable_existing_loggers': False,
@@ -40,7 +44,7 @@ LOGGING = {
         'file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': 'recipe_log/error.log',
+            'filename': LOGS_DIR /'error.log',
         }
     },
     'logers': {
