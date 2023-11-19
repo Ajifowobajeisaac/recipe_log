@@ -44,7 +44,7 @@ LOGGING = {
         'file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': LOGS_DIR /'error.log',
+            'filename': LOGS_DIR / 'logs',
         }
     },
     'loggers': {
