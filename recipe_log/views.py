@@ -14,8 +14,10 @@ def index(request):
 @login_required
 def recipes(request):
     """Show all recipe names"""
-    recipes = Recipe.objects.filter(owner=request.user).order_by('date_added') 
-
+    try:
+        recipes = Recipe.objects.filter(owner=request.user).order_by('date_added')
+    except Recipe.DoesNotExist:
+        raise Http404
     context = {'recipes': recipes}
     return render(request,'recipe_log/recipes.html', context)
 
