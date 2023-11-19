@@ -47,9 +47,9 @@ LOGGING = {
             'filename': LOGS_DIR /'error.log',
         }
     },
-    'logers': {
+    'loggers': {
         'django': {
-            'handles' : ['file'],
+            'handlers': ['file'],
             'level': 'ERROR',
             'propagate': True,
         },
@@ -90,7 +90,7 @@ ROOT_URLCONF = 'rl_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'template/recipe_log'],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
