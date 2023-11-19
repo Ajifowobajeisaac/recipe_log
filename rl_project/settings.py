@@ -33,24 +33,24 @@ LOGOUT_REDIRECT_URL = 'recipe_log:index'
 LOGIN_URL = 'accounts:login'
 
 
-# LOGGING = {
-#     'version' : 1,
-#     'disable_existing_loggers': False,
-#     'handlers': {
-#         'file': {
-#             'level': 'ERROR',
-#             'class': 'logging.FileHandler',
-#             'filename': 'recipe_log/error.log',
-#         }
-#     },
-#     'logers': {
-#         'django': {
-#             'handles' : ['file'],
-#             'level': 'ERROR',
-#             'propagate': True,
-#         },
-#     },
-# }
+LOGGING = {
+    'version' : 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': 'recipe_log/error.log',
+        }
+    },
+    'logers': {
+        'django': {
+            'handles' : ['file'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}
 
 # Application definition
 
