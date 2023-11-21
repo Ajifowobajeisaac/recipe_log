@@ -92,3 +92,7 @@ def edit_recipe_details(request, recipe_details_id):
         
     context = {'recipe_details': recipe_details, 'recipe': recipe, 'form': form}
     return render(request, 'recipe_log/edit_recipe_details.html', context)
+
+@login_required
+def delete_recipe(request, recipe_id):
+    """Deletes a recipe"""
