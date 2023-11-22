@@ -96,3 +96,6 @@ def edit_recipe_details(request, recipe_details_id):
 @login_required
 def delete_recipe(request, recipe_id):
     """Deletes a recipe"""
+    to_delete = Recipe.objects.get(pk=recipe_id)
+    to_delete.delete()
+    return 0
