@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import PermissionDenied
 from django.http import Http404
 
 from .models import Recipe, RecipeDetails
@@ -96,6 +97,10 @@ def edit_recipe_details(request, recipe_details_id):
 @login_required
 def delete_recipe(request, recipe_id):
     """Deletes a recipe"""
-    to_delete = Recipe.objects.get(pk=recipe_id)
+    to_delete = get_object_or_404(Recipe, pk=recipe_id)
+    
+    if to_delete.owner != request.user:
+        raise PermissionDenied
+    
     to_delete.delete()
-    return 0
+    return redirect('recipe_log/recipes.html')

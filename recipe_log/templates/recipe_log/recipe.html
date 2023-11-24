@@ -16,6 +16,11 @@
           Edit recipe</a></small>
       </h4>
       <div class="card-body">{{ details.text }}</div>
+      <form action="{% url 'recipe_log:delete_recipe' recipe.id%}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger" onclick="return confirm
+        ('Are you sure you want to delete this recipe?');">Delete</button>
+      </form>
     </div>  
   {% endfor %}
 

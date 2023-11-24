@@ -20,5 +20,6 @@ urlpatterns = [
     # Page for editing entries.
     path('edit_recipe_details/<int:recipe_details_id>/', views.edit_recipe_details,
           name='edit_recipe_details'),
+     path('delete_recipe/<int:recipe_id>/', views.delete_recipe, name='delete_recipe')
 ]
     
