@@ -22,10 +22,7 @@ def recipes(request):
 @login_required
 def recipe(request, recipe_id):
     """Displays individual recipes"""
-    try:
-        recipe = Recipe.objects.get(id=recipe_id)
-    except Recipe.DoesNotExist:
-        raise Http404
+    recipe = get_object_or_404(Recipe, id=recipe_id)
     # Ensures the recipe belong to the current user.
     if recipe.owner != request.user:
         raise Http404    
@@ -77,7 +74,7 @@ def new_recipe_details(request, recipe_id):
 @login_required
 def edit_recipe_details(request, recipe_details_id):
     """Edits the recipe details"""
-    recipe_details = RecipeDetails.objects.get(id=recipe_details_id)
+    recipe_details = get_object_or_404(RecipeDetails, id=recipe_details_id)
     recipe = recipe_details.recipe
     # Ensures the recipe belong to the current user.
     if recipe.owner != request.user:
@@ -103,4 +100,4 @@ def delete_recipe(request, recipe_id):
         raise PermissionDenied
     
     to_delete.delete()
-    return redirect('recipe_log/recipes.html')
+    return redirect('recipe_log:recipes.html')
