@@ -52,7 +52,7 @@ def new_recipe(request):
 @login_required
 def new_recipe_details(request, recipe_id):
     """Adds new recipe details"""
-    recipe = Recipe.objects.get(id=recipe_id)
+    recipe = get_object_or_404(Recipe, id=recipe_id)
     if recipe.owner != request.user:
         raise Http404     
     if request.method != 'POST':
