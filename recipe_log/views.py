@@ -6,7 +6,7 @@ from django.http import Http404
 from .models import Recipe, RecipeDetails
 from .forms import RecipeForm, RecipeDetailsForm
 
-# Create your views here.
+# Create your views here..
 
 def index(request):
     """The home page for Recipe log. """
