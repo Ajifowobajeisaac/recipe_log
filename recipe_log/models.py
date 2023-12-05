@@ -25,3 +25,16 @@ class RecipeDetails(models.Model):
     def __str__(self):
         """Returns the string representaion of the entry"""
         return f"{self.text[:50]}..."
+
+class Ingredients(models.Model):
+    """The conntent of a recipe"""
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
+    text = models.TextField()
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = 'ingredients'
+
+    def __str__(self):
+        """Returns the string representaion of the entry"""
+        return f"{self.text[:50]}..."
