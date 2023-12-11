@@ -1,7 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import User
+from accounts.models import User
 
 # Create your models here
+              
 
 class Recipe(models.Model):
     """The name of the recipe the user entered"""

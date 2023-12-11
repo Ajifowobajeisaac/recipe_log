@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+from django.contrib.auth import get_user_model
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ci(f$ztof1!ojls@(*dvdk3f(na68=#xss_e*a8t4&wwysw_7v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
 
@@ -55,6 +55,9 @@ LOGGING = {
         },
     },
 }
+
+# Points Django to the appropriate user model
+AUTH_USER_MODEL = get_user_model()
 
 # Application definition
 
