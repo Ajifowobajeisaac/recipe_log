@@ -77,6 +77,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+# Email Verification, Password Reset etc
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
