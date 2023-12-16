@@ -3123,3 +3123,365 @@ Traceback (most recent call last):
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'password_reset_done' not found. 'password_reset_done' is not a valid view function or pattern name.
 "POST /accounts/password_reset/ HTTP/1.1" 500 116488
+Internal Server Error: /accounts/password_reset/
+Traceback (most recent call last):
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/core/mail/backends/filebased.py", line 20, in __init__
+    os.makedirs(self.file_path, exist_ok=True)
+  File "<frozen os>", line 225, in makedirs
+FileExistsError: [Errno 17] File exists: '/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/sent_emails'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/contrib/auth/views.py", line 242, in dispatch
+    return super().dispatch(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/edit.py", line 153, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/contrib/auth/views.py", line 255, in form_valid
+    form.save(**opts)
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/contrib/auth/forms.py", line 368, in save
+    self.send_mail(
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/contrib/auth/forms.py", line 309, in send_mail
+    email_message.send()
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/core/mail/message.py", line 298, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/core/mail/message.py", line 255, in get_connection
+    self.connection = get_connection(fail_silently=fail_silently)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/core/mail/__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/core/mail/backends/filebased.py", line 22, in __init__
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Path for saving email messages exists, but is not a directory: /Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/sent_emails
+"POST /accounts/password_reset/ HTTP/1.1" 500 131815
+Internal Server Error: /accounts/password_reset/
+Traceback (most recent call last):
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/contrib/auth/views.py", line 242, in dispatch
+    return super().dispatch(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/edit.py", line 153, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/contrib/auth/views.py", line 256, in form_valid
+    return super().form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/edit.py", line 65, in form_valid
+    return HttpResponseRedirect(self.get_success_url())
+                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/edit.py", line 59, in get_success_url
+    if not self.success_url:
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/utils/functional.py", line 149, in __wrapper__
+    res = func(*self.__args, **self.__kw)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'password_reset_done' not found. 'password_reset_done' is not a valid view function or pattern name.
+"POST /accounts/password_reset/ HTTP/1.1" 500 116853
+Internal Server Error: /accounts/reset/MQ/set-password/
+Traceback (most recent call last):
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/decorators/debug.py", line 92, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/contrib/auth/views.py", line 295, in dispatch
+    return super().dispatch(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/edit.py", line 153, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/contrib/auth/views.py", line 336, in form_valid
+    return super().form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/edit.py", line 65, in form_valid
+    return HttpResponseRedirect(self.get_success_url())
+                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/edit.py", line 59, in get_success_url
+    if not self.success_url:
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/utils/functional.py", line 149, in __wrapper__
+    res = func(*self.__args, **self.__kw)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'password_reset_complete' not found. 'password_reset_complete' is not a valid view function or pattern name.
+"POST /accounts/reset/MQ/set-password/ HTTP/1.1" 500 126834
+Internal Server Error: /accounts/password_reset/
+Traceback (most recent call last):
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/contrib/auth/views.py", line 242, in dispatch
+    return super().dispatch(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/edit.py", line 153, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/contrib/auth/views.py", line 256, in form_valid
+    return super().form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/edit.py", line 65, in form_valid
+    return HttpResponseRedirect(self.get_success_url())
+                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/edit.py", line 59, in get_success_url
+    if not self.success_url:
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/utils/functional.py", line 149, in __wrapper__
+    res = func(*self.__args, **self.__kw)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'password_reset_done' not found. 'password_reset_done' is not a valid view function or pattern name.
+"POST /accounts/password_reset/ HTTP/1.1" 500 116853
+Internal Server Error: /accounts/password_reset/
+Traceback (most recent call last):
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/contrib/auth/views.py", line 242, in dispatch
+    return super().dispatch(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/edit.py", line 153, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/contrib/auth/views.py", line 256, in form_valid
+    return super().form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/edit.py", line 65, in form_valid
+    return HttpResponseRedirect(self.get_success_url())
+                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/edit.py", line 59, in get_success_url
+    if not self.success_url:
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/utils/functional.py", line 149, in __wrapper__
+    res = func(*self.__args, **self.__kw)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'password_reset_done' not found. 'password_reset_done' is not a valid view function or pattern name.
+"POST /accounts/password_reset/ HTTP/1.1" 500 116853
+Internal Server Error: /accountspassword_reset/done/
+Traceback (most recent call last):
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'login' not found. 'login' is not a valid view function or pattern name.
+"GET /accountspassword_reset/done/ HTTP/1.1" 500 155447
+Internal Server Error: /accounts/password_reset/
+Traceback (most recent call last):
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/contrib/auth/views.py", line 242, in dispatch
+    return super().dispatch(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/edit.py", line 153, in post
+    return self.form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/contrib/auth/views.py", line 256, in form_valid
+    return super().form_valid(form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/edit.py", line 65, in form_valid
+    return HttpResponseRedirect(self.get_success_url())
+                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/views/generic/edit.py", line 59, in get_success_url
+    if not self.success_url:
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/utils/functional.py", line 149, in __wrapper__
+    res = func(*self.__args, **self.__kw)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'password_reset_done' not found. 'password_reset_done' is not a valid view function or pattern name.
+"POST /accounts/password_reset/ HTTP/1.1" 500 116853
+Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.

@@ -78,7 +78,8 @@ INSTALLED_APPS = [
 ]
 
 # Email Verification, Password Reset etc
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
