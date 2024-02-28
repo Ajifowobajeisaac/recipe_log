@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import PermissionDenied
-from django.http import Http404
+from django.http import Http404, JsonResponse
 
 from .models import Recipe, RecipeDetails
 from .forms import RecipeForm, RecipeDetailsForm
@@ -72,6 +72,18 @@ def new_recipe_details(request, recipe_id):
     return render(request, 'recipe_log/new_recipe_details.html', context)
 
 @login_required
+def update_recipe_title(request, recipe_id):
+    if request.method == 'POST':
+        recipe.id = request.POST.get('recipe_id')
+        new_title = request.POST.get('new_title')
+        recipe = get_object_or_404(Recipe, pk=recipe_id, owner=request.user)
+        recipe.text = new_title
+        recipe.save()
+        return JsonResponse({'succes':True})
+    else:
+        return JsonResponse({'succes':False})
+
+@login_required
 def edit_recipe_details(request, recipe_details_id):
     """Edits the recipe details"""
     recipe_details = get_object_or_404(RecipeDetails, id=recipe_details_id)
@@ -100,4 +112,4 @@ def delete_recipe(request, recipe_id):
         raise PermissionDenied
     
     to_delete.delete()
-    return redirect('recipe_log:recipes.html')
+    return redirect('recipe_log:recipes')

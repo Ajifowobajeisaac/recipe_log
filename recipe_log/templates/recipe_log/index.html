@@ -10,9 +10,11 @@
         cooking enthusiasts to log and organize their 
         recipes
      </p>
-     <a class="btn btn-primary btn-lg mt-1" href="{% url 'accounts:register' %}">
-      Register &raquo;
-     </a>
+     {% if not user.is_authenticated %}
+        <a class="btn btn-primary btn-lg mt-1" href="{% url 'accounts:register' %}">
+          Register &raquo;
+        </a>
+      {% endif %}
     </div>
   </div>
 

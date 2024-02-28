@@ -3485,3 +3485,79 @@ Traceback (most recent call last):
   File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/http/request.py", line 150, in get_host
     raise DisallowedHost(msg)
 django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Internal Server Error: /recipes/7/
+Traceback (most recent call last):
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/recipe_log/views.py", line 31, in recipe
+    return render(request, 'recipe_log/recipe.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/Users/ajifowobajeisaac/Zeek/_CODING_/personal_projects/recipe_log/rl_env/lib/python3.11/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 8: 'static'. Did you forget to register or load this tag?
+"GET /recipes/7/ HTTP/1.1" 500 179711
